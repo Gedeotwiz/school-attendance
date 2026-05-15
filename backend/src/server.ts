@@ -5,6 +5,8 @@ import StatusCodes from "http-status-codes";
 import { handleSuccess } from "./utils/responseUtils";
 import setupSwagger from "./config/swagger";
 
+import './config/database'
+
 dotenv.config({ quiet: true });
 
 const app = express();
