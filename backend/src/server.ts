@@ -4,6 +4,7 @@ import cors from "cors";
 import StatusCodes from "http-status-codes";
 import { handleSuccess } from "./utils/responseUtils";
 import setupSwagger from "./config/swagger";
+import router from "./routes";
 
 import './config/database'
 
@@ -14,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "500mb" }));
 app.use(express.urlencoded({ limit: "500mb", extended: true }));
+app.use("/api/v1",router)
 
 setupSwagger(app);
 
