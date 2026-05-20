@@ -9,4 +9,16 @@ const checkEmail = (email:string) =>{
     return Student.findOne({email})
 }
 
-export {createStudent,checkEmail}
+const findAllStudents = () =>{
+    return Student.find()
+}
+
+const deleteStudent = (id: string) => {
+  return Student.findByIdAndDelete(id);
+};
+
+const updateStudent = (id: string, data: IStudent) => {
+  return Student.findByIdAndUpdate(id, data, { new: true });
+};
+
+export {createStudent,checkEmail,findAllStudents,deleteStudent,updateStudent}
