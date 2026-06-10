@@ -8,6 +8,11 @@ const createStudent = (data:IStudent) =>{
 const checkEmail = (email:string) =>{
     return Student.findOne({email})
 }
+const findOneStudent = (studentId:string) =>{
+   return Student.findById(
+      studentId
+    );
+}
 
 const findAllStudents = () =>{
     return Student.find()
@@ -18,7 +23,7 @@ const deleteStudent = (id: string) => {
 };
 
 const updateStudent = (id: string, data: IStudent) => {
-  return Student.findByIdAndUpdate(id, data, { new: true });
+  return Student.findByIdAndUpdate(id, data, { returnDocument: 'after' });
 };
 
-export {createStudent,checkEmail,findAllStudents,deleteStudent,updateStudent}
+export {createStudent,checkEmail,findAllStudents,deleteStudent,updateStudent,findOneStudent}

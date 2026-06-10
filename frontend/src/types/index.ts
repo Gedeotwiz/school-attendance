@@ -8,10 +8,13 @@ export type Column<T> = {
 export type Status = "present" | "absent";
 
 export type Student = {
-  id: number;
-  name: string;
+  _id: string;
+  names: string;
   email: string;
   gender: "Male" | "Female";
+  phone: string;
+  sittingLocation: string;
+  status: string;
 };
 
 export type AttendanceRecord = {
@@ -24,9 +27,24 @@ export type AttendanceByDate = {
   records: AttendanceRecord[];
 };
 
-export const students: Student[] = [
-  { id: 1, name: "John Doe", email: "john@gmail.com", gender: "Male" },
-  { id: 2, name: "Alice Smith", email: "alice@gmail.com", gender: "Female" },
-  { id: 3, name: "Eric Brown", email: "eric@gmail.com", gender: "Male" },
-  { id: 4, name: "Mary Jane", email: "mary@gmail.com", gender: "Female" },
-];
+export type StudentResponse = {
+  status: number;
+  success: boolean;
+  message: string;
+  data: Student[];
+};
+
+export type ApiResponse<T> = {
+  status: number;
+  success: boolean;
+  message: string;
+  data: T;
+};
+
+export type AddStudentDto = {
+  names: string;
+  email: string;
+  gender: "Male" | "Female";
+  phone: string;
+  sittingLocation: string
+};

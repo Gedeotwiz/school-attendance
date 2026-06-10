@@ -1,4 +1,5 @@
 import { attendanceData } from "../../costant/data";
+import { useAllStudentsQuery } from "../../services/APIsRequestService";
 
 export const StatusCard = () =>{
     const today = new Date();
@@ -18,6 +19,10 @@ const isThisWeek = (d: Date) => {
   return diff <= 7;
 };
 
+ const { data} = useAllStudentsQuery();
+
+const Totalstudents = data?.data.length;
+
 
 let todayPresent = 0, todayAbsent = 0;
 let weekPresent = 0, weekAbsent = 0;
@@ -27,7 +32,7 @@ let yearPresent = 0, yearAbsent = 0;
 const statsCards = [
   {
     title: "Total Students",
-    value: 24,
+    value: Totalstudents,
     parcent:100,
     type: "highlight",
     gradient: "from-blue-500 to-blue-600",

@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import ReportCards from "./report-cards";
 import ReportTable from "./report-table";
 import AttendanceChart from "./attendance-chart";
-import StudentReport from "./student-report";
+// import StudentReport from "./student-report";
 import { attendanceData } from "../../costant/data";
 import { DashboardHearder } from "../share/header";
 
@@ -123,9 +123,9 @@ const ReportsPage = () => {
         <div className="xl:col-span-1">
           <AttendanceChart data={filteredData} />
         </div>
-         <div className="xl:col-span-1">
+         {/* <div className="xl:col-span-1">
               <StudentReport data={filteredData} />
-         </div>
+         </div> */}
          <div className="xl:col-span-1 flex justify-end">
               <ReportCards/>
          </div>

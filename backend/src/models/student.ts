@@ -41,7 +41,7 @@ const studentSchema = new Schema<IStudentDocument>(
       default: "Active",
     },
 
-    avator: {
+    avatar: {
       type: String,
       default: "",
     },
